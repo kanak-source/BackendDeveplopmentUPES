@@ -1,0 +1,492 @@
+{
+    "widgets": [
+        {
+            "x": 0,
+            "y": 0,
+            "type": "static-text",
+            "title": "UdyamSaathi AI Welcome",
+            "width": 12,
+            "height": 5,
+            "content": "# UdyamSaathi AI – Rural Venture Decision Navigator\n\nनमस्ते! This tool helps rural women entrepreneurs find out if a business idea can earn real money — before spending too much.\n\nFill in your details step by step. The tool will calculate your costs, identify your customers, check risks, and give you **ONE clear decision**: Should you start, test, change, or wait?\n\n**Important:** Always verify any government scheme, loan, or programme information from an official source before making a financial decision. This tool gives analysis based on what you enter — it does not guarantee any outcome."
+        },
+        {
+            "x": 0,
+            "y": 5,
+            "type": "text-input",
+            "title": "Entrepreneur Name",
+            "width": 6,
+            "height": 3,
+            "placeholder": "Enter your full name (e.g. Sunita Devi)"
+        },
+        {
+            "x": 6,
+            "y": 5,
+            "type": "text-input",
+            "title": "Village District State",
+            "width": 6,
+            "height": 3,
+            "placeholder": "Your village, district, and state (e.g. Kimsar village, Almora district, Uttarakhand)"
+        },
+        {
+            "x": 0,
+            "y": 8,
+            "type": "select",
+            "title": "Preferred Language",
+            "width": 4,
+            "height": 2,
+            "options": [
+                "Hindi",
+                "English"
+            ],
+            "defaultValue": "Hindi"
+        },
+        {
+            "x": 4,
+            "y": 8,
+            "type": "text-input",
+            "title": "Product or Service Idea",
+            "width": 8,
+            "height": 3,
+            "placeholder": "What do you want to make or sell? Be specific. (e.g. homemade millet cookies in 100g packs, handmade pickles, stitched bags)"
+        },
+        {
+            "x": 0,
+            "y": 11,
+            "type": "text-input",
+            "title": "Current Skill and Experience",
+            "width": 6,
+            "height": 3,
+            "placeholder": "What skills do you already have? How long? (e.g. I have made millet snacks at home for 5 years. I know traditional recipes but never sold commercially.)"
+        },
+        {
+            "x": 6,
+            "y": 11,
+            "type": "text-input",
+            "title": "Production Capacity Per Week",
+            "width": 6,
+            "height": 3,
+            "placeholder": "How many units or kg can you make in one week? (e.g. 50 packets of 100g each, or about 5 kg of finished product)"
+        },
+        {
+            "x": 0,
+            "y": 14,
+            "type": "text-input",
+            "title": "Starting Budget",
+            "width": 4,
+            "height": 3,
+            "placeholder": "How much money can you spend to start without borrowing? (e.g. Rs 3000 saved at home)"
+        },
+        {
+            "x": 4,
+            "y": 14,
+            "type": "text-input",
+            "title": "Monthly Household Income",
+            "width": 4,
+            "height": 3,
+            "placeholder": "Total monthly income in your home from all sources? (e.g. Rs 8000 from farming and MGNREGA)"
+        },
+        {
+            "x": 8,
+            "y": 14,
+            "type": "text-input",
+            "title": "Hours Available Per Week",
+            "width": 4,
+            "height": 3,
+            "placeholder": "How many hours per week can you give to this business? (e.g. 3 hours each morning, 6 days = 18 hours/week)"
+        },
+        {
+            "x": 0,
+            "y": 17,
+            "type": "text-input",
+            "title": "Smartphone and Internet Access",
+            "width": 4,
+            "height": 3,
+            "placeholder": "Do you have a smartphone? Internet? Reliable or slow? (e.g. basic Android phone, 2G signal, sometimes no network)"
+        },
+        {
+            "x": 4,
+            "y": 17,
+            "type": "text-input",
+            "title": "Selling Experience",
+            "width": 4,
+            "height": 3,
+            "placeholder": "Have you ever sold anything before? What happened? (e.g. sold pickles to neighbours twice, sold 15 jars at Rs 60 each)"
+        },
+        {
+            "x": 8,
+            "y": 17,
+            "type": "text-input",
+            "title": "Main Business Concern",
+            "width": 4,
+            "height": 3,
+            "placeholder": "What worries you most? (e.g. I do not know if people will pay, I cannot afford to buy more raw material, I do not know the right price)"
+        },
+        {
+            "x": 0,
+            "y": 20,
+            "type": "static-text",
+            "title": "Header Opportunity Discovery",
+            "width": 12,
+            "height": 3,
+            "content": "## Section 2: Opportunity Discovery\nThe AI will analyse your inputs and identify the real business opportunity, likely customers, and what makes your product distinctive. Facts you provided are clearly separated from assumptions the system is making."
+        },
+        {
+            "x": 0,
+            "y": 23,
+            "type": "inferred-text",
+            "title": "Opportunity Discovery Analysis",
+            "width": 12,
+            "height": 14,
+            "prompt": "You are a practical rural business advisor helping a woman entrepreneur in India evaluate whether her business idea is viable. Use simple, respectful language. Never exaggerate demand. Never fabricate data or scheme names.\n\nEntrepreneur Profile:\n- Name: [Entrepreneur Name]\n- Location: [Village District State]\n- Language preference: [Preferred Language]\n- Product idea: [Product or Service Idea]\n- Skills and experience: [Current Skill and Experience]\n- Weekly production capacity: [Production Capacity Per Week]\n- Starting budget: [Starting Budget]\n- Monthly household income: [Monthly Household Income]\n- Hours available per week: [Hours Available Per Week]\n- Smartphone and internet: [Smartphone and Internet Access]\n- Selling experience: [Selling Experience]\n- Main concern: [Main Business Concern]\n\nGenerate the following clearly separated sections:\n\n1. CLEARLY DEFINED BUSINESS OPPORTUNITY\nDescribe in one or two plain sentences. Do not oversell.\n\n2. MAIN CUSTOMER PROBLEM BEING SOLVED\nWhat real problem does this product solve? If unclear, say so honestly.\n\n3. TWO OR THREE POSSIBLE CUSTOMER SEGMENTS\nName specific buyer types relevant to this rural or semi-urban location.\n\n4. WHY CUSTOMERS MIGHT PAY\nGive honest reasons. Include at least one caution about why they might NOT pay.\n\n5. WHAT MAKES THIS PRODUCT LOCALLY DISTINCTIVE\nBe honest. If nothing is clearly distinctive, say so.\n\n6. SUGGESTED MINIMUM VIABLE PRODUCT\nSmallest, cheapest version to test first. Be specific.\n\n7. WHAT NOT TO INVEST IN YET\nList at least 3 things NOT to spend money on before demand is confirmed.\n\nClearly label:\nENTREPRENEUR-PROVIDED FACTS: List every fact stated directly by the entrepreneur.\nSYSTEM ASSUMPTIONS: List every assumption the AI is making that was NOT stated. Label each clearly.\n\nEnd with one honest sentence: Is this opportunity worth testing with a small paid experiment?"
+        },
+        {
+            "x": 0,
+            "y": 37,
+            "type": "static-text",
+            "title": "Header Demand Validation",
+            "width": 12,
+            "height": 3,
+            "content": "## Section 3: Demand Validation Planner\nBefore spending money, test whether real customers will actually pay. Only paid orders count as evidence of demand — not compliments, likes, or survey interest."
+        },
+        {
+            "x": 0,
+            "y": 40,
+            "type": "inferred-text",
+            "title": "7-Day Demand Validation Plan",
+            "width": 12,
+            "height": 14,
+            "prompt": "You are a practical rural business advisor. Design a simple, low-cost 7-day demand validation experiment. The only valid evidence of demand is actual paid orders or firm advance payments. Compliments and survey interest do NOT count.\n\nEntrepreneur Profile:\n- Name: [Entrepreneur Name]\n- Location: [Village District State]\n- Product idea: [Product or Service Idea]\n- Weekly production capacity: [Production Capacity Per Week]\n- Starting budget: [Starting Budget]\n- Selling experience: [Selling Experience]\n- Smartphone and internet: [Smartphone and Internet Access]\n- Hours available: [Hours Available Per Week]\n\nCreate a structured 7-Day Demand Validation Plan:\n\n1. SAMPLE UNITS TO PRODUCE\nExact number, estimated cost, and simple presentation method.\n\n2. TARGET CUSTOMER SEGMENT\nOne specific customer group and where to find them near this entrepreneur's location.\n\n3. SUGGESTED TEST PRICE\nOne specific price with brief reasoning. Must not be free.\n\n4. NUMBER OF CUSTOMERS TO APPROACH\nSpecific number, reachable on foot or local transport.\n\n5. MINIMUM PAID ORDERS FOR PASS\nState the exact number of paid orders required. No compliments or maybes count.\n\n6. QUESTIONS TO ASK CUSTOMERS\n4 to 6 simple questions. At least one must test real willingness to pay by asking for a small deposit or advance.\n\n7. WHERE THE TEST SHOULD HAPPEN\nSpecific locations suited to the entrepreneur's village or district context.\n\n8. EVIDENCE TO RECORD EACH DAY\nSimple daily log entries. A notebook is fine.\n\n9. PASS, FAIL, INCONCLUSIVE CRITERIA\nPASS: state the specific paid order threshold.\nFAIL: state the specific paid order threshold.\nINCONCLUSIVE: describe what partial results mean and what to do next.\n\n10. WHAT TO DO AFTER THE TEST\nIf PASS: one next step. If FAIL: one next step. If INCONCLUSIVE: one next step.\n\nEnd with a reminder that compliments are not sales. Only count money actually collected."
+        },
+        {
+            "x": 0,
+            "y": 54,
+            "type": "static-text",
+            "title": "Header Unit Economics",
+            "width": 12,
+            "height": 3,
+            "content": "## Section 4: Unit Economics Calculator\nEnter your costs carefully below. Include your own time as a real cost. The AI will calculate your true cost per unit, profit, and how many units you must sell each month to cover all expenses."
+        },
+        {
+            "x": 0,
+            "y": 57,
+            "max": 10000,
+            "min": 0,
+            "step": 10,
+            "type": "number-input",
+            "unit": "Rs",
+            "title": "Raw Material Cost Per Batch",
+            "width": 4,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 4,
+            "y": 57,
+            "max": 1000,
+            "min": 1,
+            "step": 1,
+            "type": "number-input",
+            "unit": "units",
+            "title": "Units Per Batch",
+            "width": 4,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 8,
+            "y": 57,
+            "max": 100,
+            "min": 0,
+            "step": 0.5,
+            "type": "number-input",
+            "unit": "hours",
+            "title": "Labour Hours Per Batch",
+            "width": 4,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 0,
+            "y": 59,
+            "max": 500,
+            "min": 0,
+            "step": 5,
+            "type": "number-input",
+            "unit": "Rs",
+            "title": "Labour Value Per Hour",
+            "width": 4,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 4,
+            "y": 59,
+            "max": 200,
+            "min": 0,
+            "step": 1,
+            "type": "number-input",
+            "unit": "Rs",
+            "title": "Packaging Cost Per Unit",
+            "width": 4,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 8,
+            "y": 59,
+            "max": 2000,
+            "min": 0,
+            "step": 10,
+            "type": "number-input",
+            "unit": "Rs",
+            "title": "Transport Cost Per Batch",
+            "width": 4,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 0,
+            "y": 61,
+            "max": 5000,
+            "min": 0,
+            "step": 50,
+            "type": "number-input",
+            "unit": "Rs",
+            "title": "Storage Cost Per Month",
+            "width": 3,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 3,
+            "y": 61,
+            "max": 50,
+            "min": 0,
+            "step": 1,
+            "type": "number-input",
+            "unit": "%",
+            "title": "Spoilage Percentage",
+            "width": 3,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 6,
+            "y": 61,
+            "max": 50,
+            "min": 0,
+            "step": 1,
+            "type": "number-input",
+            "unit": "%",
+            "title": "Commission Percentage",
+            "width": 3,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 9,
+            "y": 61,
+            "max": 60,
+            "min": 0,
+            "step": 1,
+            "type": "number-input",
+            "unit": "%",
+            "title": "Retailer Margin Percentage",
+            "width": 3,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 0,
+            "y": 63,
+            "max": 2000,
+            "min": 0,
+            "step": 10,
+            "type": "number-input",
+            "unit": "Rs",
+            "title": "Other Costs Per Batch",
+            "width": 4,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 4,
+            "y": 63,
+            "max": 2000,
+            "min": 0,
+            "step": 5,
+            "type": "number-input",
+            "unit": "Rs",
+            "title": "Selling Price Per Unit",
+            "width": 4,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 8,
+            "y": 63,
+            "max": 20000,
+            "min": 0,
+            "step": 100,
+            "type": "number-input",
+            "unit": "Rs",
+            "title": "Monthly Fixed Costs",
+            "width": 4,
+            "height": 2,
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 0,
+            "y": 65,
+            "type": "inferred-text",
+            "title": "Unit Economics Calculation Results",
+            "width": 12,
+            "height": 14,
+            "prompt": "You are a careful rural business finance advisor. Calculate unit economics transparently using the values entered. Show every formula clearly. Use plain language. Always include the entrepreneur's own labour as a real cost.\n\nEntrepreneur: [Entrepreneur Name]\nProduct: [Product or Service Idea]\n\nInputs:\n- Raw material cost per batch: [Raw Material Cost Per Batch] Rs\n- Units per batch: [Units Per Batch]\n- Labour hours per batch: [Labour Hours Per Batch]\n- Labour value per hour: [Labour Value Per Hour] Rs\n- Packaging cost per unit: [Packaging Cost Per Unit] Rs\n- Transport cost per batch: [Transport Cost Per Batch] Rs\n- Storage cost per month: [Storage Cost Per Month] Rs\n- Spoilage percentage: [Spoilage Percentage]%\n- Commission percentage: [Commission Percentage]%\n- Retailer margin percentage: [Retailer Margin Percentage]%\n- Other costs per batch: [Other Costs Per Batch] Rs\n- Selling price per unit: [Selling Price Per Unit] Rs\n- Monthly fixed costs: [Monthly Fixed Costs] Rs\n\nCalculate and show each of the following with its formula and numeric result:\n\n1. RAW MATERIAL COST PER UNIT\nFormula: Raw material cost per batch divided by Units per batch\n\n2. LABOUR COST PER BATCH\nFormula: Labour hours per batch multiplied by Labour value per hour\nNote: If labour value per hour is 0, warn prominently that the entrepreneur's time has real value and break-even is understated.\n\n3. LABOUR COST PER UNIT\nFormula: Labour cost per batch divided by Units per batch\n\n4. TRANSPORT COST PER UNIT\nFormula: Transport cost per batch divided by Units per batch\n\n5. OTHER COSTS PER UNIT\nFormula: Other costs per batch divided by Units per batch\n\n6. BASE VARIABLE COST PER UNIT\nFormula: Sum of raw material, labour, packaging, transport, other costs per unit\n\n7. SPOILAGE ADJUSTMENT PER UNIT\nFormula: Base variable cost per unit multiplied by Spoilage percentage divided by 100\n\n8. TOTAL VARIABLE COST PER UNIT\nFormula: Base variable cost per unit plus Spoilage adjustment per unit\n\n9. CHANNEL DEDUCTION PER UNIT\nFormula: Selling price multiplied by sum of Commission and Retailer margin percentages divided by 100\n\n10. NET REVENUE PER UNIT\nFormula: Selling price minus Channel deduction per unit\n\n11. PROFIT PER UNIT\nFormula: Net revenue per unit minus Total variable cost per unit\nIf zero or negative: display a prominent WARNING that the current price does not cover costs.\n\n12. GROSS MARGIN PERCENTAGE\nFormula: Profit per unit divided by Selling price, multiplied by 100\nIf below 15%: warn that margins are very thin.\n\n13. MONTHLY BREAK-EVEN UNITS\nFormula: Monthly fixed costs plus Storage cost per month, divided by Profit per unit\nIf profit is zero or negative: state break-even cannot be calculated and the cost or price structure must change.\n\n14. PLAIN LANGUAGE SUMMARY\nExplain the results in 3 to 4 simple sentences a person with basic education can understand. State clearly whether the unit economics are viable, borderline, or not viable at this price."
+        },
+        {
+            "x": 0,
+            "y": 79,
+            "type": "static-text",
+            "title": "Header Route to Market",
+            "width": 12,
+            "height": 3,
+            "content": "## Section 5: Route-to-Market Comparator\nThe AI will compare 7 ways to sell your product and recommend the best channel for your specific situation — considering your location, budget, skills, and capacity."
+        },
+        {
+            "x": 0,
+            "y": 82,
+            "type": "inferred-text",
+            "title": "Sales Channel Comparison",
+            "width": 12,
+            "height": 14,
+            "prompt": "You are a practical rural market access advisor. Compare 7 sales channels for this entrepreneur. Be honest about advantages and disadvantages. Do not assume urban infrastructure, reliable internet, or digital skills unless stated.\n\nEntrepreneur: [Entrepreneur Name]\nLocation: [Village District State]\nProduct: [Product or Service Idea]\nBudget: [Starting Budget]\nSmartphone and internet: [Smartphone and Internet Access]\nHours available: [Hours Available Per Week]\nSelling experience: [Selling Experience]\nProduction capacity: [Production Capacity Per Week]\nSelling price: [Selling Price Per Unit] Rs\n\nFor each of the following 7 channels, provide a structured assessment:\n\n1. Village and direct selling (door-to-door, home-based, local festivals)\n2. Nearby town or weekly haat market\n3. Local retailers (kirana stores, provision shops)\n4. Institutions (schools, anganwadis, local canteens, offices)\n5. SHG, cooperative, or aggregator network\n6. WhatsApp and social media commerce\n7. Online marketplace (e-commerce platform)\n\nFor each channel show:\n- MARGIN IMPACT: Percentage of selling price the entrepreneur keeps after channel costs\n- POTENTIAL VOLUME: Realistic monthly volume given her capacity and location\n- TRANSPORT BURDEN: Low, Medium, or High with brief explanation\n- PAYMENT DELAY: How quickly she gets paid\n- PACKAGING REQUIREMENTS: What level of packaging is needed\n- DIGITAL SKILL REQUIRED: None, Basic, or Advanced\n- INTERMEDIARY DEPENDENCE: None, Low, Medium, or High\n- MAIN ADVANTAGE for this entrepreneur\n- MAIN DISADVANTAGE for this entrepreneur\n- SUITABILITY RATING: High, Medium, or Low with one sentence reason\n\nEnd with:\nPRIMARY CHANNEL RECOMMENDATION: One channel with specific reasoning for this entrepreneur.\nSECONDARY OPTION: One channel to explore after primary is working.\nCHANNEL TO AVOID FOR NOW: One channel with clear reason."
+        },
+        {
+            "x": 0,
+            "y": 96,
+            "type": "static-text",
+            "title": "Header Risk Check",
+            "width": 12,
+            "height": 3,
+            "content": "## Section 6: Risk and Resilience Check\nEvery rural business faces real risks. The AI will identify the top 5 risks most relevant to your specific situation and suggest low-cost ways to manage them."
+        },
+        {
+            "x": 0,
+            "y": 99,
+            "type": "inferred-text",
+            "title": "Risk Assessment Report",
+            "width": 12,
+            "height": 14,
+            "prompt": "You are a careful rural business risk advisor. Identify the top 5 most relevant risks for this specific entrepreneur. Suggest only low-cost and practical mitigation actions.\n\nEntrepreneur: [Entrepreneur Name]\nLocation: [Village District State]\nProduct: [Product or Service Idea]\nBudget: [Starting Budget]\nMonthly household income: [Monthly Household Income]\nSmartphone and internet: [Smartphone and Internet Access]\nMain concern: [Main Business Concern]\nSelling experience: [Selling Experience]\nSpoilage percentage entered: [Spoilage Percentage]%\nRaw material cost per batch: [Raw Material Cost Per Batch] Rs\n\nSelect the 5 most relevant risks for this entrepreneur from this list:\n- Seasonal raw material availability\n- Raw material price fluctuations\n- Product spoilage or short shelf life\n- Weather or transport disruption\n- Delayed payments from buyers\n- Dependence on a single buyer or channel\n- Limited working capital and cash flow gaps\n- Household emergency diverting business funds\n- Quality inconsistency across batches\n- Food safety or local compliance requirements\n- Limited digital access affecting sales\n- Marketplace or platform dependence\n\nFor each of the 5 selected risks provide:\n- RISK NAME\n- WHY THIS IS RELEVANT to this specific entrepreneur in one sentence\n- PROBABILITY: Low, Medium, or High with brief reason\n- IMPACT: Low, Medium, or High with brief reason\n- SIMPLE MITIGATION ACTION: One or two practical, low-cost or no-cost actions\n- EARLY WARNING SIGN: How will she know this risk is becoming a real problem?\n\nEnd with:\nOVERALL RISK LEVEL: Low, Medium, or High with one sentence explanation.\nMOST URGENT RISK TO ADDRESS FIRST: Name it and explain why."
+        },
+        {
+            "x": 0,
+            "y": 113,
+            "type": "static-text",
+            "title": "Header Support Pathway",
+            "width": 12,
+            "height": 3,
+            "content": "## Section 7: Support Pathway\nThe AI will identify types of support that may help. IMPORTANT DISCLAIMER: All programme and scheme information must be verified from official government, bank, or programme sources before any financial decision is made. This tool does not guarantee availability of any support."
+        },
+        {
+            "x": 0,
+            "y": 116,
+            "type": "inferred-text",
+            "title": "Support Pathway Recommendations",
+            "width": 12,
+            "height": 12,
+            "prompt": "You are a rural enterprise support advisor. Identify this entrepreneur's most important constraints and recommend types of support. You must NOT invent specific scheme names, grant amounts, interest rates, or eligibility criteria.\n\nEntrepreneur: [Entrepreneur Name]\nLocation: [Village District State]\nProduct: [Product or Service Idea]\nSkills: [Current Skill and Experience]\nBudget: [Starting Budget]\nHousehold income: [Monthly Household Income]\nSmartphone and internet: [Smartphone and Internet Access]\nMain concern: [Main Business Concern]\nSelling experience: [Selling Experience]\n\nStep 1: IDENTIFY TOP 3 CONSTRAINTS\nBased on the profile, name the 3 most important things holding this entrepreneur back. Choose from: knowledge gap, skill gap, equipment gap, market access gap, working capital gap, network gap, digital access gap.\n\nStep 2: FOR EACH CONSTRAINT, RECOMMEND SUPPORT\nFor each of the 3 constraints state:\n- Why it is a constraint for this entrepreneur specifically\n- What type of support would help (e.g. business skills training, food processing training, SHG membership, market linkage support, working capital access)\n- Where to look for this support locally (general sources only: district KVK, RSETI, SHG federation, NABARD office, district industries centre, block development office)\n- One practical first step this week\n\nStep 3: SHG PATHWAY ASSESSMENT\nWould joining or strengthening an SHG help this entrepreneur? Why or why not? Be specific to her product and route to market.\n\nStep 4: MANDATORY DISCLAIMER\nDisplay this prominently in both languages:\n\nEnglish: Current programme information requires verification from an official government, bank or programme source before any financial decision is made. Scheme names, eligibility criteria, interest rates, and grant amounts change and this tool has not verified any specific programme.\n\nHindi: किसी भी सरकारी योजना, ऋण या कार्यक्रम की जानकारी को कोई भी वित्तीय निर्णय लेने से पहले आधिकारिक सरकारी, बैंक या संस्था स्रोत से सत्यापित करना अनिवार्य है।"
+        },
+        {
+            "x": 0,
+            "y": 128,
+            "type": "static-text",
+            "title": "Header Inclusive Access",
+            "width": 12,
+            "height": 3,
+            "content": "## Section 8: Inclusive Access Mode\nKey information in simple Hindi and plain English. Designed for limited bandwidth and limited business knowledge. Includes a Low Bandwidth Summary you can save or print."
+        },
+        {
+            "x": 0,
+            "y": 131,
+            "type": "inferred-text",
+            "title": "Hindi and Simple Language Summary",
+            "width": 12,
+            "height": 12,
+            "prompt": "You are a friendly rural business advisor creating a simple summary for a woman entrepreneur who may have limited formal education. Write in simple Hindi and plain English. Avoid all difficult business words. Where you must use a business term, explain it immediately in everyday language.\n\nExamples of plain language replacements:\n- Margin -> har packet bechne ke baad bachne wala paisa\n- Break-even -> jitni bikri ke baad aapka saara kharcha nikal jaayega\n- Capital -> shuruat ke liye lagaya gaya paisa\n- Demand -> kitne log aapka saman kharidna chahte hain\n- Validation -> yeh jaanchna ki log sach mein paise dekar kharidenge ya nahin\n\nEntrepreneur: [Entrepreneur Name]\nProduct: [Product or Service Idea]\nLocation: [Village District State]\nPreferred Language: [Preferred Language]\nSelling price: [Selling Price Per Unit] Rs\nRaw material cost per batch: [Raw Material Cost Per Batch] Rs\nLabour hours: [Labour Hours Per Batch] at [Labour Value Per Hour] Rs per hour\nMain concern: [Main Business Concern]\n\nCreate TWO sections:\n\nSECTION A: SIMPLE LANGUAGE EXPLANATION\nWrite 6 to 8 short sentences in Hindi explaining:\n- What the product is and who it is for\n- How much one unit costs to make roughly\n- How much to charge per unit\n- What the validation test means and why it matters\n- What the main risk is and one simple action to reduce it\nUse short sentences. Use Hindi examples from daily rural life. Grammar must be correct.\n\nSECTION B: LOW BANDWIDTH SUMMARY\nVery short, readable on a slow phone or printed on one small piece of paper. Maximum 120 words.\n\nDisplay exactly these 9 lines:\n1. Aapka utpaad: (Your product)\n2. Ek unit banane ki laagat: (Estimated cost per unit)\n3. Bikri ka bhav: (Selling price per unit)\n4. Har unit par kamaai: (Estimated profit per unit)\n5. Sabse acha grahak: (Best customer type)\n6. Bechne ka sabse acha tarika: (Recommended sales channel)\n7. Sabse bada khatra: (Main risk)\n8. Agla kadam: (Next action to take)\n9. Antim nirnay: (Final decision - write PENDING until Section 10 is generated)"
+        },
+        {
+            "x": 0,
+            "y": 143,
+            "type": "static-text",
+            "title": "Header Evidence Ledger",
+            "width": 12,
+            "height": 3,
+            "content": "## Section 9: Evidence Ledger\nA transparent record separating what is fact, what is assumed, what is calculated, and what is still missing. Honest decisions require honest evidence."
+        },
+        {
+            "x": 0,
+            "y": 146,
+            "type": "inferred-text",
+            "title": "Evidence Ledger Report",
+            "width": 12,
+            "height": 14,
+            "prompt": "You are a rigorous evidence auditor for a rural venture assessment. Your job is to clearly separate facts from assumptions. Never present assumptions as facts. Never fabricate data.\n\nAll inputs provided by the entrepreneur:\n- Name: [Entrepreneur Name]\n- Location: [Village District State]\n- Product: [Product or Service Idea]\n- Skills: [Current Skill and Experience]\n- Production capacity: [Production Capacity Per Week]\n- Starting budget: [Starting Budget]\n- Monthly household income: [Monthly Household Income]\n- Hours available: [Hours Available Per Week]\n- Smartphone and internet: [Smartphone and Internet Access]\n- Selling experience: [Selling Experience]\n- Main concern: [Main Business Concern]\n- Raw material cost per batch: [Raw Material Cost Per Batch] Rs\n- Units per batch: [Units Per Batch]\n- Labour hours per batch: [Labour Hours Per Batch]\n- Labour value per hour: [Labour Value Per Hour] Rs\n- Packaging cost per unit: [Packaging Cost Per Unit] Rs\n- Transport cost per batch: [Transport Cost Per Batch] Rs\n- Storage cost per month: [Storage Cost Per Month] Rs\n- Spoilage percentage: [Spoilage Percentage]%\n- Commission percentage: [Commission Percentage]%\n- Retailer margin percentage: [Retailer Margin Percentage]%\n- Other costs per batch: [Other Costs Per Batch] Rs\n- Selling price per unit: [Selling Price Per Unit] Rs\n- Monthly fixed costs: [Monthly Fixed Costs] Rs\n\nCreate these clearly separated sections:\n\n1. FACTS SUPPLIED BY ENTREPRENEUR\nList everything directly stated. Number each fact. Do not add interpretation.\n\n2. VERIFIED EXTERNAL INFORMATION\nOnly include information genuinely verifiable from public sources (e.g. millet is a real food category, weekly haats exist in most Indian districts). Do not cite specific prices or scheme details as verified.\n\n3. SYSTEM ASSUMPTIONS\nList every assumption made that was NOT stated by the entrepreneur. Number each and label it clearly as ASSUMPTION.\n\n4. CALCULATIONS PERFORMED\nList each key calculation with its formula, inputs used, and result.\n\n5. MISSING EVIDENCE\nList the most important pieces of information not yet available. For each: what is missing, why it matters, how to get it, and urgency (High, Medium, or Low).\n\n6. REASONING CHAIN\nIn 5 to 7 numbered steps, explain in plain language how the facts, assumptions, and calculations together point toward the overall assessment. Identify the weakest link in the reasoning.\n\nEnd with an EVIDENCE QUALITY RATING: Strong, Moderate, or Weak, with a one-line explanation."
+        },
+        {
+            "x": 0,
+            "y": 160,
+            "type": "static-text",
+            "title": "Header Final Decision",
+            "width": 12,
+            "height": 3,
+            "content": "## Section 10: Final Decision Engine\nBased on all evidence, costs, risks, and missing information, the AI will give you exactly ONE decision. This is a reasoned recommendation, not a guarantee."
+        },
+        {
+            "x": 0,
+            "y": 163,
+            "type": "inferred-text",
+            "title": "Final Business Decision",
+            "width": 12,
+            "height": 12,
+            "prompt": "You are a careful, honest rural business decision advisor. Give exactly ONE decision from the six options below. Never automatically recommend PROCEED. Be honest when evidence is insufficient or economics are weak.\n\nEntrepreneur profile:\n- Name: [Entrepreneur Name]\n- Location: [Village District State]\n- Product: [Product or Service Idea]\n- Skills: [Current Skill and Experience]\n- Production capacity: [Production Capacity Per Week]\n- Starting budget: [Starting Budget]\n- Monthly household income: [Monthly Household Income]\n- Hours available: [Hours Available Per Week]\n- Smartphone and internet: [Smartphone and Internet Access]\n- Selling experience: [Selling Experience]\n- Main concern: [Main Business Concern]\n\nCost and price inputs:\n- Raw material cost per batch: [Raw Material Cost Per Batch] Rs\n- Units per batch: [Units Per Batch]\n- Labour hours: [Labour Hours Per Batch] at [Labour Value Per Hour] Rs per hour\n- Packaging: [Packaging Cost Per Unit] Rs per unit\n- Transport: [Transport Cost Per Batch] Rs per batch\n- Spoilage: [Spoilage Percentage]%\n- Commission: [Commission Percentage]%\n- Retailer margin: [Retailer Margin Percentage]%\n- Other costs: [Other Costs Per Batch] Rs\n- Selling price: [Selling Price Per Unit] Rs\n- Monthly fixed costs: [Monthly Fixed Costs] Rs\n\nEvaluate these 8 criteria and write a one to two sentence assessment for each:\n\n1. CUSTOMER WILLINGNESS TO PAY: Is there evidence of actual paid demand or only assumed demand?\n2. UNIT ECONOMICS: Is profit per unit positive after including all costs and labour?\n3. BREAK-EVEN FEASIBILITY: Can she realistically reach break-even with her stated production capacity?\n4. PRODUCTION CAPACITY: Does her weekly capacity match the minimum volume needed?\n5. WORKING CAPITAL: Does her starting budget cover first batch plus packaging plus transport plus 30 days without income?\n6. ROUTE TO MARKET: Is there a realistic, accessible sales channel given her location, skills, and budget?\n7. MAJOR RISKS: Are there risks that could cause the business to fail in the first 90 days?\n8. MISSING EVIDENCE: Is critical evidence absent that prevents a reliable decision?\n\nChoose EXACTLY ONE decision:\n- PROCEED: Sufficient evidence and viable economics for a limited launch now\n- PILOT: Economics look reasonable but paid demand is unproven; run a small controlled paid test\n- MODIFY: Change the product, target customer, price, or channel before proceeding\n- COLLABORATE: More viable through SHG, cooperative, or partner than as a solo venture\n- TEST FURTHER: Critical evidence is missing; specific tests must be completed before any investment\n- PAUSE: Current evidence suggests this is unlikely to be financially viable\n\nDisplay as:\n\nFINAL DECISION: [state the one decision in capital letters]\n\nWHY THIS DECISION:\nProvide 3 to 5 specific reasons based on the actual numbers and inputs above.\n\nTO CHANGE THIS DECISION:\nState what specific evidence or change would be needed to move to a better decision.\n\nONE HONEST NOTE:\nIn one sentence, state the single most important uncertainty that could make this decision wrong."
+        },
+        {
+            "x": 0,
+            "y": 175,
+            "type": "static-text",
+            "title": "Header Decision Card",
+            "width": 12,
+            "height": 3,
+            "content": "## Section 11: One-Page Decision Card\nA structured summary card of the entire analysis. Save, print, or share this with a mentor, SHG leader, bank officer, or family member to explain your business decision clearly."
+        },
+        {
+            "x": 0,
+            "y": 178,
+            "type": "inferred-text",
+            "title": "UdyamSaathi Decision Card",
+            "width": 12,
+            "height": 14,
+            "prompt": "Generate a structured one-page decision card titled UdyamSaathi AI Rural Venture Decision Card. Use clear section headings. Keep language simple and printable.\n\nAll information to use:\n- Entrepreneur name: [Entrepreneur Name]\n- Location: [Village District State]\n- Product: [Product or Service Idea]\n- Skills: [Current Skill and Experience]\n- Production capacity: [Production Capacity Per Week]\n- Starting budget: [Starting Budget]\n- Monthly household income: [Monthly Household Income]\n- Hours available: [Hours Available Per Week]\n- Smartphone and internet: [Smartphone and Internet Access]\n- Selling experience: [Selling Experience]\n- Main concern: [Main Business Concern]\n- Raw material cost per batch: [Raw Material Cost Per Batch] Rs\n- Units per batch: [Units Per Batch]\n- Labour hours: [Labour Hours Per Batch] at [Labour Value Per Hour] Rs per hour\n- Packaging: [Packaging Cost Per Unit] Rs per unit\n- Transport: [Transport Cost Per Batch] Rs per batch\n- Spoilage: [Spoilage Percentage]%\n- Selling price: [Selling Price Per Unit] Rs\n- Monthly fixed costs: [Monthly Fixed Costs] Rs\n- Commission: [Commission Percentage]%\n- Retailer margin: [Retailer Margin Percentage]%\n\nCreate the card with these clearly numbered sections:\n\n1. ENTREPRENEUR AND BUSINESS CONTEXT\nName, location, product, available hours per week, starting budget.\n\n2. CUSTOMER AND PROBLEM\nWho is the most likely customer? What problem does this product solve for them?\n\n3. EVIDENCE COLLECTED\nWhat direct evidence of demand exists based on selling experience stated? If no paid sales evidence exists, say so clearly.\n\n4. KEY ASSUMPTIONS STILL UNTESTED\nList the 3 most important assumptions that have not yet been validated with real customers.\n\n5. UNIT ECONOMICS SUMMARY\nPresent as a simple list:\n- Estimated raw material cost per unit: (calculate from raw material per batch divided by units per batch)\n- Estimated labour cost per unit: (calculate from labour hours multiplied by rate, divided by units per batch)\n- Packaging cost per unit: (from input)\n- Transport cost per unit: (from transport per batch divided by units per batch)\n- Total estimated cost per unit: (sum of above)\n- Selling price per unit: (from input)\n- Estimated profit per unit: (selling price minus total cost)\n- Estimated gross margin: (profit divided by selling price as percentage)\n\n6. BREAK-EVEN ESTIMATE\nApproximate units per month needed to cover fixed costs. Show the simple calculation formula.\n\n7. RECOMMENDED SALES CHANNEL\nPrimary channel with one sentence reason based on her specific constraints.\n\n8. PRINCIPAL RISKS\nTop 3 risks in one line each, with one mitigation per risk.\n\n9. FINAL DECISION\nState the decision clearly and prominently. Use the same decision that would be reached in the Final Business Decision section. Write it in capital letters.\n\n10. WHY THIS DECISION\n2 to 3 sentences in simple language.\n\n11. YOUR NEXT STEP\nOne specific action to take within the next 48 hours.\n\nNote at the bottom: This card reflects inputs entered on this date. Review if any inputs or circumstances change. Verify all programme and scheme information from official sources before taking any financial action."
+        },
+        {
+            "x": 0,
+            "y": 192,
+            "type": "static-text",
+            "title": "Header 30 Day Plan",
+            "width": 12,
+            "height": 3,
+            "content": "## Section 12: 30-Day Action Plan\nA simple week-by-week plan of small, affordable, and measurable actions for the next 30 days. Ends with your single most important action for the next 48 hours."
+        },
+        {
+            "x": 0,
+            "y": 195,
+            "type": "inferred-text",
+            "title": "30-Day Venture Action Plan",
+            "width": 12,
+            "height": 14,
+            "prompt": "You are a practical rural enterprise coach. Create a realistic 30-day action plan for this entrepreneur. Every action must be small, affordable, specific, and measurable. No action should require spending more than 10 percent of her starting budget in the first week. No action should require skills or tools she has not confirmed.\n\nEntrepreneur: [Entrepreneur Name]\nLocation: [Village District State]\nProduct: [Product or Service Idea]\nStarting budget: [Starting Budget]\nProduction capacity: [Production Capacity Per Week]\nHours available: [Hours Available Per Week]\nSmartphone and internet: [Smartphone and Internet Access]\nSelling experience: [Selling Experience]\nMain concern: [Main Business Concern]\nRaw material cost per batch: [Raw Material Cost Per Batch] Rs\nSelling price: [Selling Price Per Unit] Rs\nUnits per batch: [Units Per Batch]\n\nStructure the plan in four weekly stages:\n\nWEEK 1: VALIDATE (Days 1 to 7)\nGoal: Find out if real customers will pay real money.\nList 4 to 5 specific daily or every-other-day actions.\nFocus: produce small batch, approach target customers, record only paid purchases.\nEnd with: What does a successful Week 1 look like? What does a failed Week 1 look like?\n\nWEEK 2: IMPROVE (Days 8 to 14)\nGoal: Adjust product, price, or customer based on Week 1 results.\nList 4 to 5 actions covering both pass and fail scenarios.\nInclude: one action to reduce the biggest cost, one action to address the top risk.\n\nWEEK 3: CHANNEL TEST (Days 15 to 21)\nGoal: Test the recommended sales route with real customers.\nList 4 to 5 specific actions to set up and try the recommended primary channel.\nInclude: how to approach the channel, what to track, how to handle payment terms.\n\nWEEK 4: DECIDE (Days 22 to 30)\nGoal: Review all evidence and make a clear go or no-go decision.\nList 3 to 4 actions to compile evidence from the three previous weeks.\nProvide a simple decision framework: If she has achieved a minimum number of paid repeat orders at her target price then she should continue. If not, she should modify or pause.\nInclude a financial check comparing actual costs to the original estimates.\n\nFor each action specify:\n- What exactly to do in one sentence\n- How long it takes\n- What success looks like\n- What to record\n\nThen display this section prominently at the end:\n\nYOUR NEXT BEST ACTION IN THE NEXT 48 HOURS:\nWrite ONE specific, concrete, affordable action. Include: what to make, how many units, at what price, who to approach, where, and what to record. Format it like this example style: Prepare 20 trial packs of your product and offer them to 30 people you know in your village at your target price. Write down how many people paid, how many said no, and one reason why they did or did not buy. Do not count compliments or promises as success.\n\nEnd with a reminder that a no-go decision based on evidence is a success, not a failure. Small honest experiments protect her family's money."
+        }
+    ]
+}
