@@ -1,0 +1,62 @@
+http request structure
+request line
+headers
+body(optional)
+
+http response structure
+states line
+headers (important here is content length: 256)
+body
+
+curl(little bit difficult), postmenapi(like gui), browser(fetch method), fetch api (javascript), axios (javascript library), insomiya 
+
+inspect -> inspector(show the code of the request and response) 
+console -> network tab (show the request and response details related to javascript)
+
+local storage -> key-value pairs stored in the browser, persists even after the browser is closed, stoge more data than cookies, used for storing user preferences, session data, etc.
+
+-v (verbose mode in curl)                example: curl -v http://example.com
+-x (proxy option in curl)                example: curl -x http://proxyserver:port http://example.com
+-H (header option in curl)               example: curl -H "Content-Type: application/json" http://example.com
+-d (data option in curl for sending data in POST requests)          example: curl -d "param1=value1&param2=value2" http://example.com
+-i (include response headers in the output in curl)                 example: curl -i http://example.com
+
+fetch()
+basic syntax: fetch(url, options)
+options: method, headers, body, mode, credentials, cache, redirect, referrer,
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
+
+example of get request using fetch:
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+  fetch("https://localhost:3000/students")
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+
+
+
+
+    
+    example of post request using fetch:
+    create a new student using post
+fetch('https://localhost:3000/students', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    name: 'John Doe',
+    age: 20,
+    major: 'Computer Science'
+  })
+})
+  .then(response => response.json())...... need to here something which response after what you request/post the data
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
