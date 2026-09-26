@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Add Note</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body>
+
+    <div class="form-card">
+
+        <h1>Add New Note</h1>
+
+        <br>
+
+
+        <form action="/notes" method="POST">
+
+
+            <label>
+                Title
+            </label>
+
+            <input
+                type="text"
+                name="title"
+                placeholder="Enter note title"
+                required
+            >
+
+
+            <label>
+                Content
+            </label>
+
+            <textarea
+                name="content"
+                placeholder="Write your note here..."
+                required
+            ></textarea>
+
+
+            <label>
+                Category
+            </label>
+
+            <input
+                type="text"
+                name="category"
+                placeholder="e.g. Study, Work, Personal"
+            >
+
+
+            <button
+                class="submit-btn"
+                type="submit"
+            >
+                Add Note
+            </button>
+
+
+        </form>
+
+
+        <a href="/" class="back-link">
+            ← Back to Notes
+        </a>
+
+
+    </div>
+<footer>
+    <p>&copy; Made By kanak Shree, 590019239</p>
+</footer>
+</body>
+
+</html>

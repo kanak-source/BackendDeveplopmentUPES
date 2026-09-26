@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Notes</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>📝 My Notes</h1>
+
+        <p>Keep your thoughts organized in one place.</p>
+
+
+        <a href="/notes/new" class="add-button">
+            + Add New Note
+        </a>
+
+
+        <% if (notes.length === 0) { %>
+
+            <div class="empty-message">
+
+                <h2>No notes yet</h2>
+
+                <p>
+                    Create your first note to get started.
+                </p>
+
+            </div>
+
+        <% } else { %>
+
+
+            <div class="notes-grid">
+
+
+                <% notes.forEach(note => { %>
+
+
+                    <div class="note">
+
+
+                        <h2>
+                            <%= note.title %>
+                        </h2>
+
+
+                        <p>
+                            <%= note.content %>
+                        </p>
+
+
+                        <span class="category">
+                            <%= note.category || "General" %>
+                        </span>
+
+
+                        <div class="date">
+
+                            Created:
+                            <%= note.created_at.toLocaleString() %>
+
+                        </div>
+
+
+                        <form
+                            action="/notes/<%= note.id %>/delete"
+                            method="POST"
+                        >
+
+                            <button
+                                class="delete-btn"
+                                type="submit"
+                            >
+                                Delete
+                            </button>
+
+                        </form>
+
+
+                    </div>
+
+
+                <% }) %>
+
+
+            </div>
+
+
+        <% } %>
+
+
+    </div>
+<footer>
+    <p>&copy; Made By kanak Shree, 590019239</p>
+</footer>
+</body>
+
+</html>

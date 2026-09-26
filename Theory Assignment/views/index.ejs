@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= title %> | Backend Assignment</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= TOP NAVBAR ================= -->
+
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-icon">PG</div>
+
+            <div>
+                <strong>PostgreSQL + JSONB</strong>
+                <span>Backend Assignment</span>
+            </div>
+        </div>
+
+        <div class="topbar-right">
+            <span class="student-label">
+                Student
+            </span>
+
+            <strong><%= studentName %></strong>
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                BACKEND ASSIGNMENT
+            </div>
+
+            <h1>
+                Explore the Power of
+                <span>JSONB</span>
+                in PostgreSQL
+            </h1>
+
+            <p class="hero-subtitle">
+                How PostgreSQL can combine the structured power of SQL
+                with flexible document-style data handling.
+            </p>
+
+            <p class="hero-description">
+                <%= assignmentTitle %>.
+                This assignment explores JSONB storage, querying,
+                indexing, backend integration and its relationship
+                with NoSQL-style document storage.
+            </p>
+
+            <div class="hero-meta">
+
+                <div class="meta-item">
+                    <span>STUDENT</span>
+                    <strong><%= studentName %></strong>
+                </div>
+
+                <div class="meta-item">
+                    <span>ASSIGNMENT</span>
+                    <strong>JSONB in PostgreSQL</strong>
+                </div>
+
+                <div class="meta-item">
+                    <span>TECHNOLOGY</span>
+                    <strong>Express.js · EJS · PostgreSQL</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO VISUAL -->
+
+        <div class="hero-visual">
+
+            <div class="sql-side">
+
+                <span class="visual-label">SQL</span>
+
+                <div>✓ Structured Data</div>
+                <div>✓ Relationships</div>
+                <div>✓ Joins</div>
+                <div>✓ ACID</div>
+
+            </div>
+
+            <div class="database-orb">
+
+                <div class="orb-dot"></div>
+
+                <strong>PostgreSQL</strong>
+                <span>SQL + JSONB</span>
+
+            </div>
+
+            <div class="nosql-side">
+
+                <span class="visual-label">DOCUMENT DATA</span>
+
+                <div>✓ Flexible Schema</div>
+                <div>✓ Nested Data</div>
+                <div>✓ Documents</div>
+                <div>✓ JSON</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STEP NAVIGATION ================= -->
+
+    <section class="step-navigation">
+
+        <div class="section-label">
+            ASSIGNMENT JOURNEY
+        </div>
+
+        <div class="step-progress">
+
+    <% steps.forEach((step) => { %>
+
+        <button
+            type="button"
+            class="step-tab <%= step.id === 1 ? 'active' : '' %>"
+            data-step="<%= step.id %>"
+        >
+
+            <span class="step-number">
+                <%= step.number %>
+            </span>
+
+            <span class="step-tab-text">
+                <strong>
+                    <%= step.title %>
+                </strong>
+
+                <small>
+                    <%= step.shortTitle %>
+                </small>
+            </span>
+
+        </button>
+
+    <% }); %>
+
+</div>
+
+    </section>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-container">
+
+        <% steps.forEach((step) => { %>
+
+            <article
+                class="assignment-step <%= step.id === 1 ? 'active-content' : '' %>"
+                data-content="<%= step.id %>"
+            >
+
+                <!-- STEP HEADER -->
+
+                <div class="content-header">
+
+                    <div>
+
+                        <div class="content-step-number">
+                            STEP <%= step.number %>
+                        </div>
+
+                        <h2>
+                            <%= step.title %>
+                        </h2>
+
+                        <p class="content-subtitle">
+                            <%= step.subtitle %>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OVERVIEW -->
+
+                <% if (step.overview) { %>
+
+                    <div class="overview-box">
+
+                        <span class="overview-label">
+                            OVERVIEW
+                        </span>
+
+                        <p>
+                            <%= step.overview %>
+                        </p>
+
+                    </div>
+
+                <% } %>
+
+
+                <!-- ================= SECTIONS ================= -->
+
+                <% if (step.sections) { %>
+
+                    <% step.sections.forEach((section) => { %>
+
+                        <section class="content-section">
+
+                            <h3>
+                                <%= section.heading %>
+                            </h3>
+
+
+                            <!-- PARAGRAPHS -->
+
+                            <% if (section.paragraphs) { %>
+
+                                <% section.paragraphs.forEach((paragraph) => { %>
+
+                                    <p class="content-paragraph">
+                                        <%= paragraph %>
+                                    </p>
+
+                                <% }); %>
+
+                            <% } %>
+
+
+                            <!-- BULLETS -->
+
+                            <% if (section.bullets) { %>
+
+                                <ul class="content-list">
+
+                                    <% section.bullets.forEach((bullet) => { %>
+
+                                        <li>
+                                            <span class="bullet-icon">✓</span>
+
+                                            <span>
+                                                <%= bullet %>
+                                            </span>
+                                        </li>
+
+                                    <% }); %>
+
+                                </ul>
+
+                            <% } %>
+
+
+                            <!-- NUMBERED LIST -->
+
+                            <% if (section.numberedList) { %>
+
+                                <ol class="numbered-list">
+
+                                    <% section.numberedList.forEach((item, index) => { %>
+
+                                        <li>
+
+                                            <span class="list-number">
+                                                <%= String(index + 1).padStart(2, "0") %>
+                                            </span>
+
+                                            <span>
+                                                <%= item %>
+                                            </span>
+
+                                        </li>
+
+                                    <% }); %>
+
+                                </ol>
+
+                            <% } %>
+
+
+                            <!-- HIGHLIGHT -->
+
+                            <% if (section.highlight) { %>
+
+                                <div class="highlight-box">
+
+                                    <div class="highlight-icon">
+                                        ✦
+                                    </div>
+
+                                    <p>
+                                        <%= section.highlight %>
+                                    </p>
+
+                                </div>
+
+                            <% } %>
+
+
+                            <!-- ARCHITECTURE -->
+
+                            <% if (section.architecture) { %>
+
+                                <div class="architecture">
+
+                                    <% section.architecture.forEach((item, index) => { %>
+
+                                        <div class="architecture-item">
+
+                                            <span>
+                                                <%= item %>
+                                            </span>
+
+                                        </div>
+
+                                        <% if (index < section.architecture.length - 1) { %>
+
+                                            <div class="architecture-arrow">
+                                                ↓
+                                            </div>
+
+                                        <% } %>
+
+                                    <% }); %>
+
+                                </div>
+
+                            <% } %>
+
+
+                            <!-- TABLE -->
+
+                            <% if (section.table) { %>
+
+                                <div class="table-wrapper">
+
+                                    <table>
+
+                                        <thead>
+
+                                            <tr>
+
+                                                <% section.table.headers.forEach((header) => { %>
+
+                                                    <th>
+                                                        <%= header %>
+                                                    </th>
+
+                                                <% }); %>
+
+                                            </tr>
+
+                                        </thead>
+
+                                        <tbody>
+
+                                            <% section.table.rows.forEach((row) => { %>
+
+                                                <tr>
+
+                                                    <% row.forEach((cell) => { %>
+
+                                                        <td>
+                                                            <%= cell %>
+                                                        </td>
+
+                                                    <% }); %>
+
+                                                </tr>
+
+                                            <% }); %>
+
+                                        </tbody>
+
+                                    </table>
+
+                                </div>
+
+                            <% } %>
+
+
+                            <!-- COMPARISON -->
+
+                            <% if (section.comparison) { %>
+
+                                <div class="comparison-list">
+
+                                    <% section.comparison.forEach((item) => { %>
+
+                                        <div class="comparison-row">
+
+                                            <div class="comparison-old">
+                                                <span>TRADITIONAL</span>
+                                                <p>
+                                                    <%= item.traditional %>
+                                                </p>
+                                            </div>
+
+                                            <div class="comparison-arrow">
+                                                →
+                                            </div>
+
+                                            <div class="comparison-new">
+                                                <span>JSONB</span>
+                                                <p>
+                                                    <%= item.jsonb %>
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                    <% }); %>
+
+                                </div>
+
+                            <% } %>
+
+
+                            <!-- SUBSECTIONS -->
+
+                            <% if (section.subsections) { %>
+
+                                <div class="subsections">
+
+                                    <% section.subsections.forEach((subsection) => { %>
+
+                                        <div class="subsection">
+
+                                            <h4>
+                                                <%= subsection.title %>
+                                            </h4>
+
+
+                                            <% if (subsection.paragraphs) { %>
+
+                                                <% subsection.paragraphs.forEach((paragraph) => { %>
+
+                                                    <p class="content-paragraph">
+                                                        <%= paragraph %>
+                                                    </p>
+
+                                                <% }); %>
+
+                                            <% } %>
+
+
+                                            <% if (subsection.code) { %>
+
+                                                <div class="code-card">
+
+                                                    <div class="code-header">
+
+                                                        <span>
+                                                            <%= subsection.code.language.toUpperCase() %>
+                                                        </span>
+
+                                                        <button
+                                                            class="copy-code"
+                                                            type="button"
+                                                        >
+                                                            Copy
+                                                        </button>
+
+                                                    </div>
+
+                                                    <pre><code><%= subsection.code.value %></code></pre>
+
+                                                </div>
+
+                                            <% } %>
+
+                                        </div>
+
+                                    <% }); %>
+
+                                </div>
+
+                            <% } %>
+
+
+                            <!-- CODE EXAMPLES -->
+
+                            <% if (section.codeExamples) { %>
+
+                                <div class="code-examples">
+
+                                    <% section.codeExamples.forEach((example) => { %>
+
+                                        <div class="code-card">
+
+                                            <div class="code-header">
+
+                                                <span>
+                                                    <%= example.language.toUpperCase() %>
+                                                </span>
+
+                                                <span class="code-title">
+                                                    <%= example.title %>
+                                                </span>
+
+                                                <button
+                                                    class="copy-code"
+                                                    type="button"
+                                                >
+                                                    Copy
+                                                </button>
+
+                                            </div>
+
+                                            <pre><code><%= example.code %></code></pre>
+
+                                        </div>
+
+                                    <% }); %>
+
+                                </div>
+
+                            <% } %>
+
+
+                            <!-- AFTER PARAGRAPHS -->
+
+                            <% if (section.paragraphsAfter) { %>
+
+                                <% section.paragraphsAfter.forEach((paragraph) => { %>
+
+                                    <p class="content-paragraph">
+                                        <%= paragraph %>
+                                    </p>
+
+                                <% }); %>
+
+                            <% } %>
+
+                        </section>
+
+                    <% }); %>
+
+                <% } %>
+
+
+                <!-- ================= KEY POINTS ================= -->
+
+                <% if (step.keyPoints) { %>
+
+                    <section class="key-points">
+
+                        <div class="section-mini-label">
+                            KEY POINTS
+                        </div>
+
+                        <h3>
+                            What you should remember
+                        </h3>
+
+                        <div class="key-points-grid">
+
+                            <% step.keyPoints.forEach((point, index) => { %>
+
+                                <div class="key-point">
+
+                                    <span class="key-point-number">
+                                        <%= String(index + 1).padStart(2, "0") %>
+                                    </span>
+
+                                    <p>
+                                        <%= point %>
+                                    </p>
+
+                                </div>
+
+                            <% }); %>
+
+                        </div>
+
+                    </section>
+
+                <% } %>
+
+
+                <!-- ================= TAKEAWAY ================= -->
+
+                <% if (step.takeaway) { %>
+
+                    <section class="takeaway">
+
+                        <div class="takeaway-icon">
+                            ✦
+                        </div>
+
+                        <div>
+
+                            <span>
+                                <%= step.takeaway.title %>
+                            </span>
+
+                            <p>
+                                <%= step.takeaway.text %>
+                            </p>
+
+                        </div>
+
+                    </section>
+
+                <% } %>
+
+
+                <!-- ================= NEXT STEP ================= -->
+
+                <% if (step.nextStep) { %>
+
+                    <div class="next-preview">
+
+                        <span>
+                            UP NEXT
+                        </span>
+
+                        <strong>
+                            <%= step.nextStep.title %>
+                        </strong>
+
+                        <p>
+                            <%= step.nextStep.description %>
+                        </p>
+
+                    </div>
+
+                <% } %>
+
+
+            </article>
+
+        <% }); %>
+
+    </main>
+
+
+    <!-- ================= FOOTER NAVIGATION ================= -->
+
+    <section class="bottom-navigation">
+
+        <button
+            id="previousBtn"
+            class="nav-button previous"
+            disabled
+        >
+            ← Previous
+        </button>
+
+        <div
+            id="stepIndicator"
+            class="step-indicator"
+        >
+            01 / 07
+        </div>
+
+        <button
+            id="nextBtn"
+            class="nav-button next"
+        >
+            Next Step →
+        </button>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div>
+            <strong>PostgreSQL + JSONB</strong>
+            <span>Backend Theory Assignment</span>
+        </div>
+
+        <div>
+            <span>
+                Created by <strong><%= studentName %></strong>
+            </span>
+        </div>
+
+    </footer>
+
+
+    <script src="/js/script.js"></script>
+
+</body>
+</html>
