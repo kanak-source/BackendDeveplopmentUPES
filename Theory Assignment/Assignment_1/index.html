@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notes App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>My Notes</h1>
+            <p class="subtitle">
+                Write it down. Keep it safe.
+            </p>
+        </header>
+
+        <!-- Add Note Section -->
+        <div class="note-input-section">
+
+            <textarea
+                id="noteInput"
+                placeholder="Write your note here..."
+            ></textarea>
+
+            <button id="addNoteBtn">
+                + Add Note
+            </button>
+
+        </div>
+
+
+        <!-- Notes Heading -->
+        <div class="notes-header">
+            <h2>Your Notes</h2>
+
+            <span id="noteCount">
+                0 Notes
+            </span>
+        </div>
+
+
+        <!-- Notes will appear here -->
+        <div id="notesList"></div>
+
+
+        <!-- Message shown when there are no notes -->
+        <div id="emptyMessage" class="empty-message">
+
+            <h3>No notes yet</h3>
+
+            <p>
+                Add your first note using the box above.
+            </p>
+
+        </div>
+
+    </div>
+
+<footer class="footer">
+    <p>Developed by <strong>Kanak Shree</strong></p>
+    <p>SAP ID: <strong>590019239</strong></p>
+</footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
