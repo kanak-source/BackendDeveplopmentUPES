@@ -70,53 +70,49 @@ def home(request: Request):
     )
 ```
 
+The backend passes the `students` collection to the HTML template, where Jinja2 dynamically generates the final webpage.
+
 ---
 
 ## 🔁 Jinja2 Loop
 
-Students are dynamically displayed using:
+A **Jinja2 for-loop** is used to iterate through the students collection.
 
-```html
-{% for student in students %}
+For every student, the template dynamically creates a table row containing:
 
-<tr>
-    <td>{{ student.id }}</td>
-    <td>{{ student.name }}</td>
-    <td>{{ student.branch }}</td>
-</tr>
+- Student ID
+- Student Name
+- Student Branch
 
-{% endfor %}
-```
+This avoids manually writing separate HTML rows for every student.
 
 ---
 
 ## 🔀 Conditional Rendering
 
-The template checks whether students exist:
+Jinja2 conditional statements are used to check whether student data is available.
 
-```html
-{% if students|length == 0 %}
+The template follows this logic:
 
-    <p>No students found.</p>
+```text
+If number of students = 0
+        ↓
+Display "No students found"
 
-{% else %}
-
-    <!-- Display students -->
-
-{% endif %}
+Otherwise
+        ↓
+Display total students
+        ↓
+Generate student table
 ```
 
 ---
 
-## 🔢 Jinja2 Filter
+## 🔢 Jinja2 Length Filter
 
-The total number of students is displayed using:
+The Jinja2 `length` filter is used to calculate the total number of students.
 
-```html
-{{ students|length }}
-```
-
-Example:
+For the sample data, the webpage displays:
 
 ```text
 Total students: 3
@@ -195,10 +191,10 @@ http://127.0.0.1:8000
 - `TemplateResponse`
 - `HTMLResponse`
 - Template context
-- `{{ }}` variables
-- `{% for %}` loops
-- `{% if %}` conditions
-- Jinja2 `length` filter
+- Template variables
+- Jinja2 loops
+- Jinja2 conditions
+- Jinja2 filters
 - Dynamic HTML tables
 - Backend-to-frontend data passing
 - Uvicorn
