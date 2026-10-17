@@ -15,8 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from students_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('', views.index),             #path('todo/', views.index),
+    # path('students/', views.index),
+    # path('students/json/', views.indexJson),
+    # path('', views.indexJson),
+    path('students/', include('students_app.urls')),  # Include the URLs from students_app    #/stu/ will be the prefix for all URLs defined in students_app.urls then /stu/urls of students_app will be accessed. For example, /stu/students/ will access the index view of students_app.
 ]

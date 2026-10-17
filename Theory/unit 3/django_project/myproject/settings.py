@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'students_app',
 ]
 
 MIDDLEWARE = [
@@ -54,8 +55,8 @@ ROOT_URLCONF = 'myproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [],                                                          #central level
+        'APP_DIRS': True,                                                    #only app templates 
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
@@ -74,7 +75,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',                                 #migrate (make migrations) will create a sqlite3 database file in the project directory
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
@@ -106,7 +107,7 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
+USE_I18N = True                         
 
 USE_TZ = True
 
@@ -114,7 +115,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'static/'               #static files will be served from this URL, like html, css, js, images etc.
 
 
 # Email
