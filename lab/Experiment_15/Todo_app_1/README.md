@@ -1,26 +1,28 @@
-# Django Todo Application
+# Django Todo Application - V1
 
-A simple Todo application developed using **Django** as part of the Backend Development Lab. The application allows users to create, view, update the status of, and delete daily tasks.
+A basic Todo web application developed using Django as part of **Backend Development Lab - Experiment 15**.
+
+This version focuses on understanding the fundamental concepts of Django, including models, views, templates, URL routing, database migrations, and basic CRUD operations.
 
 ## Student Details
 
 **Name:** Kanak Shree  
-**SAP ID:** 590019239  
+**SAP ID:** 590019239
 
 ## Experiment
 
-**Experiment 15 – Django Todo App v1 (Basic)**
+**Experiment 15 - Django Todo App V1 (Basic)**
 
 ## Features
 
 - Add new tasks
-- View all tasks
+- Display all tasks
 - Mark tasks as completed
 - Mark completed tasks as pending
 - Delete tasks
-- Django Admin Panel support
-- SQLite database integration
-- Simple and responsive user interface
+- Store tasks using SQLite
+- Django Admin Panel
+- Simple responsive user interface
 
 ## Technologies Used
 
@@ -29,32 +31,27 @@ A simple Todo application developed using **Django** as part of the Backend Deve
 - HTML
 - CSS
 - SQLite
-- uv (Python package and project manager)
+- uv
 
 ## Project Structure
 
 ```text
 Todo_app_1/
-│
 ├── manage.py
 ├── db.sqlite3
 ├── pyproject.toml
 ├── uv.lock
-│
 ├── todo_project/
-│   ├── __init__.py
 │   ├── settings.py
 │   ├── urls.py
 │   ├── asgi.py
 │   └── wsgi.py
-│
 └── todo/
     ├── migrations/
     ├── templates/
     │   └── todo/
     │       ├── task_list.html
     │       └── add_task.html
-    ├── __init__.py
     ├── admin.py
     ├── apps.py
     ├── models.py
@@ -63,104 +60,71 @@ Todo_app_1/
     └── views.py
 ```
 
-## Setup and Installation
+## Task Model
 
-### 1. Clone the repository
+The application uses a `Task` model with three fields:
 
-```bash
-git clone <repository-url>
-cd Todo_app_1
-```
+| Field | Description |
+|---|---|
+| `title` | Stores the task title |
+| `completed` | Stores the completion status |
+| `created_at` | Stores the task creation date and time |
 
-### 2. Install dependencies
+## Setup
 
-The project uses `uv` for dependency management.
+Install project dependencies:
 
 ```bash
 uv sync
 ```
 
-### 3. Apply database migrations
+Apply migrations:
 
 ```bash
 uv run python manage.py migrate
 ```
 
-### 4. Run the development server
+Run the application:
 
 ```bash
 uv run python manage.py runserver
 ```
 
-If port `8000` is already in use:
+If port 8000 is already occupied:
 
 ```bash
 uv run python manage.py runserver 8080
 ```
 
-Open the application in your browser:
-
-```text
-http://127.0.0.1:8000/
-```
-
-or, when using port 8080:
-
-```text
-http://127.0.0.1:8080/
-```
-
 ## Admin Panel
 
-Create a superuser using:
+Create an administrator:
 
 ```bash
 uv run python manage.py createsuperuser
 ```
 
-Start the server and open:
+The admin panel can then be accessed at:
 
 ```text
 http://127.0.0.1:8000/admin/
 ```
 
-The Django Admin Panel can be used to view and manage tasks stored in the database.
-
-## Task Model
-
-The application uses a `Task` model containing the following fields:
-
-| Field | Description |
-|---|---|
-| `title` | Stores the title of the task |
-| `completed` | Stores whether the task is completed or pending |
-| `created_at` | Stores the date and time when the task was created |
-
-## Application Routes
-
-| Route | Purpose |
-|---|---|
-| `/` | Display all tasks |
-| `/add/` | Add a new task |
-| `/toggle/<task_id>/` | Change task completion status |
-| `/delete/<task_id>/` | Delete a task |
-| `/admin/` | Django Admin Panel |
-
 ## Learning Outcomes
 
-Through this experiment, I learned how to:
+Through this version of the application, I learned how to:
 
-- Create and configure a Django project
-- Create a Django application
-- Define database models
-- Perform migrations using Django ORM
+- Create a Django project and application
+- Configure `INSTALLED_APPS`
+- Create Django models
+- Perform database migrations
+- Work with Django ORM
 - Create views and URL routes
-- Use Django templates
-- Handle form submissions
+- Create and render Django templates
+- Process HTML forms
 - Perform basic CRUD operations
-- Use the Django Admin Panel
-- Run and manage a Django project using `uv`
+- Work with the Django Admin Panel
 
 ## Conclusion
 
-This experiment demonstrates the basic working of a Django web application by implementing a Todo management system. It provides practical understanding of Django models, views, templates, URL routing, database operations, and form handling.
+Todo App V1 demonstrates the fundamental workflow of a Django application. It provides a basic task management system while covering the core concepts required to understand Django backend development.
