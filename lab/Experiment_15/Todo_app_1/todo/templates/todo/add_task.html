@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #0c3663;
+        }
+
+        .header {
+            background-color: #0b355f;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .header-content {
+            width: 90%;
+            max-width: 850px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .student-info {
+            text-align: right;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 60px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #0c3663;
+        }
+
+        .buttons {
+            margin-top: 22px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            background-color: #0b355f;
+            color: white;
+            border: none;
+            padding: 11px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0c3663;
+        }
+
+        .back-button {
+            background-color: #e9ecef;
+            color: #333;
+            text-decoration: none;
+            padding: 11px 18px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="header-content">
+
+        <h1>Django Todo Application</h1>
+
+        <div class="student-info">
+            <strong>Kanak Shree</strong><br>
+            SAP ID: 590019239
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <h2>Add New Task</h2>
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <label for="title">Task Title</label>
+
+        <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Enter task title"
+            required
+        >
+
+        <div class="buttons">
+
+            <button type="submit">
+                Add Task
+            </button>
+
+            <a href="{% url 'task_list' %}" class="back-button">
+                Back
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>

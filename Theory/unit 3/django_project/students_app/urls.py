@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from students_app import views
+from . import views
 
 urlpatterns = [
     path('students/', views.index),
     path('students/json/', views.indexJson),
-    # path('', views.indexJson),          
+    # path('', views.indexJson),
+    path("", views.student_list, name="student-list"),
+    path("<int:student_id>/", views.student_detail, name="student-detail"),          
 ]
+

@@ -25,4 +25,6 @@ urlpatterns = [
     # path('students/json/', views.indexJson),
     # path('', views.indexJson),
     path('students/', include('students_app.urls')),  # Include the URLs from students_app    #/stu/ will be the prefix for all URLs defined in students_app.urls then /stu/urls of students_app will be accessed. For example, /stu/students/ will access the index view of students_app.
+    path("api/students/", include("students.urls")),
 ]
+

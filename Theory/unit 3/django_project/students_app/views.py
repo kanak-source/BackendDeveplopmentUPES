@@ -12,6 +12,20 @@ def indexJson(request):
     })
 
 
+def student_list(request):
+    return JsonResponse({
+        "students": [],
+        "message": "Student list endpoint",
+    })
+
+
+def student_detail(request, student_id):
+    return JsonResponse({
+        "student_id": student_id,
+        "message": "Student detail endpoint",
+    })
+
+
 # This function acts as a view to handle incoming requests
 def index(request):
     return HttpResponse("Welcome to the Student Management API (Django)")
