@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #113d69;
+    background-color: #f4f6f8;
+}
+
+
+/* Header */
+
+.site-header {
+    min-height: 75px;
+    padding: 15px 5%;
+    background-color: #113d69;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    color: white;
+}
+
+.site-title {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.site-header nav {
+    display: flex;
+    gap: 20px;
+}
+
+.site-header nav a {
+    color: #e6e9ec;
+    text-decoration: none;
+}
+
+.site-header nav a:hover {
+    color: white;
+}
+
+.student-info {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-size: 14px;
+}
+
+
+/* Main content */
+
+.container {
+    width: min(900px, 92%);
+    margin: 40px auto;
+}
+
+.panel {
+    padding: 30px;
+    background-color: white;
+    border: 1px solid #d8dee5;
+    border-radius: 8px;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.page-heading h1,
+.panel h1 {
+    margin-top: 0;
+}
+
+.page-heading p,
+.description {
+    color: #687386;
+}
+
+
+/* Tasks */
+
+.task-list {
+    padding: 0;
+    margin: 20px 0 0;
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid #e5e9f1;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.task-actions form {
+    margin: 0;
+}
+
+.completed {
+    color: #7a8491;
+    text-decoration: line-through;
+}
+
+.empty-message {
+    padding: 30px;
+    text-align: center;
+    color: #777;
+}
+
+
+/* Buttons */
+
+button,
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #113d69;
+    color: white;
+    font: inherit;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+    background-color: #113d69;
+}
+
+button.danger {
+    background-color: #b02a37;
+}
+
+button.danger:hover {
+    background-color: #92232d;
+}
+
+.secondary-button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #e9ecef;
+    color: #333;
+    text-decoration: none;
+}
+
+
+/* Form */
+
+.task-form {
+    display: grid;
+    gap: 12px;
+    max-width: 500px;
+    margin-top: 25px;
+}
+
+.task-form label {
+    font-weight: bold;
+}
+
+.task-form input {
+    padding: 12px;
+    border: 1px solid #aeb8c8;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.task-form input:focus {
+    outline: none;
+    border-color: #113d69;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+/* Footer */
+
+.site-footer {
+    margin-top: 60px;
+    padding: 20px;
+    border-top: 1px solid #d8dee5;
+    text-align: center;
+    color: #687386;
+    font-size: 13px;
+    background-color: white;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .student-info {
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .page-heading,
+    .task-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
