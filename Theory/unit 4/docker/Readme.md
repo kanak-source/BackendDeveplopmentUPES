@@ -1,61 +1,51 @@
-# 🐳 Unit 4 — Docker
+# Unit 4 - Docker
 
-This unit covers the fundamentals of **Docker and containerization**, including Docker images, containers, networking, volumes, port mapping, Dockerfiles, Docker Compose, and image/container management.
+This unit covers the fundamentals of Docker and containerization, including Docker images, containers, networking, volumes, port mapping, Dockerfiles, Docker Compose, and container management.
 
 ---
 
-## 📚 Topics Covered
+## Topics Covered
 
 - Docker installation and environment verification
 - Docker images and containers
-- Pulling and removing images
+- Pulling and removing Docker images
 - Running and managing containers
 - Interactive and detached containers
 - Port mapping
 - Docker networking
-- Docker volumes and bind mounts
-- Container logs and statistics
+- Docker volumes
+- Bind mounts
+- Container logs and monitoring
 - Docker inspection
-- Creating custom images
+- Creating custom Docker images
 - Dockerfile
-- Docker image save/load
-- Container export
+- Docker image save and load
+- Container export and import
 - Docker Compose
 - Docker cleanup commands
 
 ---
 
-## 📂 Practical Implementations
+## Practical Implementations
 
-### ☕ 1. Java Application using Dockerfile
+### 1. Java Application Using Dockerfile
 
-A simple Java application was containerized using **Ubuntu 22.04 and OpenJDK 17**.
+A simple Java application was containerized using Ubuntu 22.04 and OpenJDK 17.
 
-📁 **[View Java Dockerfile Practical](./java-dockerfile/)**
+[View Java Dockerfile Practical](./java-dockerfile/)
 
-The practical demonstrates:
+#### Files
 
-- Creating a Java program
-- Using Ubuntu as the base image
-- Installing OpenJDK 17
-- Setting a working directory
-- Copying source code into an image
-- Compiling Java during image creation
-- Building a custom Docker image
-- Running the application inside a Docker container
+- [Dockerfile](./java-dockerfile/Dockerfile)
+- [Hello.java](./java-dockerfile/Hello.java)
 
-### Files
-
-- [`Dockerfile`](./java-dockerfile/Dockerfile)
-- [`Hello.java`](./java-dockerfile/Hello.java)
-
-### Build Image
+#### Build the Image
 
 ```bash
 docker build -t java-app:2.0 .
 ```
 
-### Run Container
+#### Run the Container
 
 ```bash
 docker run java-app:2.0
@@ -69,19 +59,20 @@ Hello from Docker container!
 
 ---
 
-### 🐳 2. Docker Compose
+### 2. Docker Compose
 
-Docker Compose was explored for defining and managing container services through a YAML configuration file.
+Docker Compose is used to define and manage container services using a YAML configuration file.
 
-📁 **[View Docker Compose Practical](./compose-demo/)**
+[View Docker Compose Practical](./compose-demo/)
 
-### File
+#### File
 
-- [`compose.yaml`](./compose-demo/compose.yaml)
+- [compose.yaml](./compose-demo/compose.yaml)
 
-Example commands:
+Basic commands:
 
 ```bash
+docker compose up
 docker compose up -d
 docker compose ps
 docker compose down
@@ -89,9 +80,9 @@ docker compose down
 
 ---
 
-## 🖥️ Docker Environment Commands
+# Docker Basic Commands
 
-### Check Docker Version
+## Docker Version
 
 ```bash
 docker version
@@ -99,19 +90,19 @@ docker version
 
 Displays Docker Client and Server version information.
 
-### Docker System Information
+## Docker System Information
 
 ```bash
 docker info
 ```
 
-Displays detailed information about the Docker environment.
+Displays detailed information about the Docker environment, including containers, images, storage, CPU, and memory.
 
 ---
 
-## 🖼️ Docker Images
+# Docker Images
 
-List images:
+List locally available Docker images:
 
 ```bash
 docker images
@@ -129,17 +120,19 @@ Display only image IDs:
 docker images -q
 ```
 
-Pull an image:
+Pull the latest Ubuntu image:
 
 ```bash
 docker pull ubuntu
 ```
 
-Pull a specific version:
+Pull a specific Ubuntu version:
 
 ```bash
 docker pull ubuntu:22.04
 ```
+
+The value after `:` represents the image tag.
 
 Remove an image:
 
@@ -147,9 +140,15 @@ Remove an image:
 docker rmi image_name
 ```
 
+Force removal:
+
+```bash
+docker rmi -f image_name
+```
+
 ---
 
-## 📦 Docker Containers
+# Docker Containers
 
 Run a container:
 
@@ -163,25 +162,55 @@ Run an interactive container:
 docker run -it ubuntu bash
 ```
 
-Run with a custom name:
+Run a container with a custom name:
 
 ```bash
 docker run -it --name test ubuntu bash
 ```
 
-List running containers:
+Run a container in detached mode:
+
+```bash
+docker run -d nginx
+```
+
+Automatically remove a container after it exits:
+
+```bash
+docker run --rm ubuntu
+```
+
+---
+
+## List Containers
+
+Display running containers:
 
 ```bash
 docker ps
 ```
 
-List all containers:
+Display all containers:
 
 ```bash
 docker ps -a
 ```
 
-Start, stop, and restart a container:
+Display only container IDs:
+
+```bash
+docker ps -q
+```
+
+Display IDs of all containers:
+
+```bash
+docker ps -aq
+```
+
+---
+
+## Start, Stop and Restart Containers
 
 ```bash
 docker start container_name
@@ -189,13 +218,17 @@ docker stop container_name
 docker restart container_name
 ```
 
-Remove a container:
+---
+
+## Remove Containers
+
+Remove a stopped container:
 
 ```bash
 docker rm container_name
 ```
 
-Force remove:
+Force-remove a container:
 
 ```bash
 docker rm -f container_name
@@ -203,7 +236,13 @@ docker rm -f container_name
 
 ---
 
-## 💻 Accessing a Running Container
+# Accessing Containers
+
+Attach to the main process of a running container:
+
+```bash
+docker attach container_name
+```
 
 Execute a new Bash shell inside a running container:
 
@@ -211,17 +250,13 @@ Execute a new Bash shell inside a running container:
 docker exec -it container_name bash
 ```
 
-Attach to the container's main process:
-
-```bash
-docker attach container_name
-```
+`docker exec` creates a new process inside the running container, whereas `docker attach` connects to the container's existing main process.
 
 ---
 
-## 🌐 Port Mapping
+# Port Mapping
 
-Example:
+Run Nginx with port mapping:
 
 ```bash
 docker run -d --name web -p 8080:80 nginx
@@ -230,13 +265,7 @@ docker run -d --name web -p 8080:80 nginx
 Here:
 
 ```text
-Host Port 8080 → Container Port 80
-```
-
-The Nginx server can then be accessed using:
-
-```text
-http://localhost:8080
+Host Port 8080 -> Container Port 80
 ```
 
 General syntax:
@@ -245,9 +274,21 @@ General syntax:
 docker run -p host_port:container_port image_name
 ```
 
+The Nginx application can then be accessed at:
+
+```text
+http://localhost:8080
+```
+
+Automatically publish exposed ports:
+
+```bash
+docker run -d -P nginx
+```
+
 ---
 
-## 🔗 Docker Networking
+# Docker Networking
 
 List Docker networks:
 
@@ -261,7 +302,7 @@ Create a custom network:
 docker network create mynet
 ```
 
-Run a container on the network:
+Run a container using the custom network:
 
 ```bash
 docker run -d --name network_web --network=mynet nginx
@@ -269,9 +310,9 @@ docker run -d --name network_web --network=mynet nginx
 
 ---
 
-## 💾 Docker Volumes
+# Docker Volumes
 
-Create a volume:
+Create a Docker volume:
 
 ```bash
 docker volume create mydata
@@ -283,19 +324,23 @@ List volumes:
 docker volume ls
 ```
 
-Mount the volume:
+Mount a volume:
 
 ```bash
 docker run -v mydata:/data ubuntu
 ```
 
-Read-only volume:
+Mount a volume in read-only mode:
 
 ```bash
 docker run -v mydata:/data:ro ubuntu
 ```
 
-### Bind Mount
+Docker volumes provide persistent storage independent of the lifecycle of a container.
+
+---
+
+# Bind Mounts
 
 General syntax:
 
@@ -303,120 +348,209 @@ General syntax:
 docker run -v /host/path:/container/path ubuntu
 ```
 
-A bind mount maps a directory from the host machine directly into a container.
+A bind mount maps a specific directory from the host machine directly into the container.
+
+Example:
+
+```bash
+docker run --rm -v ~/docker-bind-demo:/data ubuntu:22.04 cat /data/test.txt
+```
 
 ---
 
-## 📋 Logs and Monitoring
+# Environment Variables
 
-View container logs:
+Environment variables can be passed to containers using `-e`.
+
+```bash
+docker run --rm -e MY_NAME=Kanak ubuntu:22.04 printenv MY_NAME
+```
+
+---
+
+# Restart Policy
+
+A restart policy can automatically restart a container when required.
+
+```bash
+docker run -d --name restart_demo --restart=always nginx
+```
+
+---
+
+# Container Logs
+
+Display container logs:
 
 ```bash
 docker logs container_name
 ```
 
-Follow live logs:
+Follow logs continuously:
 
 ```bash
 docker logs -f container_name
 ```
 
-View the last 50 lines:
+Display the last 50 lines:
 
 ```bash
 docker logs --tail 50 container_name
 ```
 
-View logs from the last 10 minutes:
+Display logs generated during the last 10 minutes:
 
 ```bash
 docker logs --since 10m container_name
 ```
 
-View live resource usage:
+---
+
+# Docker Statistics
+
+Display live resource usage of running containers:
 
 ```bash
 docker stats
 ```
 
-Inspect detailed container information:
+It provides information such as:
+
+- CPU usage
+- Memory usage
+- Network I/O
+- Block I/O
+- Number of processes
+
+---
+
+# Docker Inspect
+
+Display detailed information about a container:
 
 ```bash
 docker inspect container_name
 ```
 
+It provides information about container configuration, networking, ports, environment variables, mounts, state, and other metadata.
+
 ---
 
-## ☕ Java Container Practical
+# Java Application Inside a Docker Container
 
-An Ubuntu container was created and configured manually with Java:
+Create an interactive Ubuntu container:
 
 ```bash
 docker run -it --name java_lab ubuntu:22.04 bash
 ```
 
-OpenJDK 17 was installed:
+Update packages:
 
 ```bash
 apt update
+```
+
+Install OpenJDK 17:
+
+```bash
 apt install -y openjdk-17-jdk
 ```
 
-Java installation was verified using:
+Verify Java installation:
 
 ```bash
 javac --version
 ```
 
-Application directory:
+Create the application directory:
 
 ```bash
 mkdir -p /home/app
 cd /home/app
 ```
 
-The Java program was compiled and executed using:
+Create `Hello.java`:
+
+```java
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello from Docker container!");
+    }
+}
+```
+
+Compile the program:
 
 ```bash
 javac Hello.java
+```
+
+Run the program:
+
+```bash
 java Hello
+```
+
+Expected output:
+
+```text
+Hello from Docker container!
 ```
 
 ---
 
-## 🏗️ Creating an Image from a Container
+# Creating an Image Using Docker Commit
 
-A custom image was created from the configured Java container:
+Create an image from the configured container:
 
 ```bash
 docker commit java_lab myrepo/java-app:1.0
 ```
 
-The image can be executed using:
+Verify the image:
+
+```bash
+docker images
+```
+
+Run a new container using the image:
 
 ```bash
 docker run -it myrepo/java-app:1.0 bash
 ```
 
+Then:
+
+```bash
+cd /home/app
+java Hello
+```
+
 ---
 
-## 📤 Save and Load Docker Images
+# Docker Save and Load
 
-Save an image:
+Save a Docker image to a TAR archive:
 
 ```bash
 docker save -o java-app.tar myrepo/java-app:1.0
 ```
 
-Load the saved image:
+Load the image:
 
 ```bash
 docker load -i java-app.tar
 ```
 
+Verify:
+
+```bash
+docker images
+```
+
 ---
 
-## 📦 Exporting a Container
+# Docker Export and Import
 
 Export a container filesystem:
 
@@ -424,20 +558,31 @@ Export a container filesystem:
 docker export java_lab > container.tar
 ```
 
-### Save vs Export
+Docker images can also be saved using:
+
+```bash
+docker save -o image.tar myrepo/java-app:1.0
+```
+
+## Difference
 
 | Command | Purpose |
 |---|---|
-| `docker save` | Saves a Docker image |
-| `docker load` | Loads a saved Docker image |
+| `docker commit` | Creates an image from a container |
+| `docker save` | Saves a Docker image as an archive |
+| `docker load` | Loads an image from a saved archive |
 | `docker export` | Exports a container filesystem |
 | `docker import` | Creates an image from an exported filesystem |
+| `docker push` | Uploads an image to a registry |
+| `docker pull` | Downloads an image from a registry |
 
 ---
 
-## 🐳 Dockerfile
+# Dockerfile
 
-The Java application was also containerized using a Dockerfile:
+The Java application can be containerized automatically using a Dockerfile.
+
+[View Dockerfile](./java-dockerfile/Dockerfile)
 
 ```dockerfile
 FROM ubuntu:22.04
@@ -459,32 +604,76 @@ Build the image:
 docker build -t java-app:2.0 .
 ```
 
-Build without cache:
+Run the image:
+
+```bash
+docker run java-app:2.0
+```
+
+Build without using cached layers:
 
 ```bash
 docker build --no-cache -t java-app:2.1 .
 ```
 
+Use a differently named Dockerfile:
+
+```bash
+docker build -f Dockerfile.dev -t myapp .
+```
+
 ---
 
-## ⚙️ Common Docker Run Options
+# Docker Compose
 
-| Option | Purpose |
+Docker Compose allows multiple container services to be defined in a single YAML file.
+
+[View Compose Configuration](./compose-demo/compose.yaml)
+
+Start services:
+
+```bash
+docker compose up
+```
+
+Start in detached mode:
+
+```bash
+docker compose up -d
+```
+
+Build before starting:
+
+```bash
+docker compose up --build
+```
+
+Stop and remove Compose services:
+
+```bash
+docker compose down
+```
+
+---
+
+# Common Docker Run Options
+
+| Option | Description |
 |---|---|
 | `-it` | Interactive terminal |
-| `-d` | Detached/background mode |
-| `--rm` | Automatically remove container after exit |
-| `--name` | Assign a custom container name |
+| `-d` | Detached mode |
+| `--rm` | Automatically remove the container after exit |
+| `--name` | Assign a name to the container |
 | `-p` | Map host and container ports |
 | `-P` | Automatically publish exposed ports |
 | `-v` | Mount a volume or bind mount |
 | `-e` | Set environment variables |
-| `--network` | Connect to a Docker network |
+| `--network` | Connect the container to a network |
 | `--restart=always` | Automatically restart the container |
 
 ---
 
-## 🧹 Docker Cleanup
+# Docker Cleanup
 
 Remove stopped containers:
 
@@ -504,7 +693,7 @@ Remove unused Docker resources:
 docker system prune
 ```
 
-More extensive cleanup:
+Remove all unused images:
 
 ```bash
 docker system prune -a
@@ -516,39 +705,42 @@ Include unused volumes:
 docker system prune --volumes
 ```
 
-> **Note:** Cleanup commands should be used carefully because they may permanently remove Docker resources.
+These commands should be used carefully because removed Docker resources may not be recoverable.
 
 ---
 
-## 🎯 Key Learning Outcomes
+# Key Learning Outcomes
 
 After completing this unit, I gained practical understanding of:
 
-- The difference between Docker images and containers
-- Creating and managing containers
-- Working with Docker images and tags
-- Port mapping and container networking
-- Persistent storage using volumes
-- Bind mounts
+- Docker images and containers
+- Image tags and image management
+- Container lifecycle management
+- Interactive and detached containers
+- Port mapping
+- Docker networking
+- Docker volumes and bind mounts
+- Environment variables
 - Container logs and resource monitoring
-- Building custom images using Dockerfiles
-- Creating images using `docker commit`
-- Saving, loading, and exporting Docker resources
-- Running Java applications inside containers
+- Docker inspection
+- Creating custom images using `docker commit`
+- Building reproducible images using Dockerfiles
+- Saving and loading Docker images
+- Exporting container filesystems
+- Running Java applications inside Docker containers
 - Basic Docker Compose workflow
+- Docker cleanup and resource management
 
 ---
 
-## 📁 Repository Navigation
+# Repository Navigation
 
-- ☕ [Java Dockerfile Practical](./java-dockerfile/)
-- 🐳 [Docker Compose Practical](./compose-demo/)
-- 📄 [Java Source Code](./java-dockerfile/Hello.java)
-- 🐳 [Dockerfile](./java-dockerfile/Dockerfile)
-- ⚙️ [Compose Configuration](./compose-demo/compose.yaml)
+- [Java Dockerfile Practical](./java-dockerfile/)
+- [Java Source Code](./java-dockerfile/Hello.java)
+- [Dockerfile](./java-dockerfile/Dockerfile)
+- [Docker Compose Practical](./compose-demo/)
+- [Compose Configuration](./compose-demo/compose.yaml)
 
 ---
 
-### 🔙 Navigation
-
-[⬅️ Back to Backend Development Theory](../README.md)
+[Back to Backend Development Theory](../../README.md)
